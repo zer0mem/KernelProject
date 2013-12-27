@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Win8 Debug|Win32">
+      <Configuration>Win8 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Release|Win32">
+      <Configuration>Win8 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Debug|Win32">
+      <Configuration>Win7 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Release|Win32">
+      <Configuration>Win7 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Vista Debug|Win32">
+      <Configuration>Vista Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Vista Release|Win32">
+      <Configuration>Vista Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Debug|x64">
+      <Configuration>Win8 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8 Release|x64">
+      <Configuration>Win8 Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Debug|x64">
+      <Configuration>Win7 Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win7 Release|x64">
+      <Configuration>Win7 Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Vista Debug|x64">
+      <Configuration>Vista Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Vista Release|x64">
+      <Configuration>Vista Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D0B4F58-F922-4CD9-B31D-576BAC88085E}</ProjectGuid>
+    <TemplateGuid>{dd38f7fc-d7bd-488b-9242-7d8754cde80d}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration>Win8 Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <RootNamespace>KernelProject</RootNamespace>
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VisualStudioVersion)' == '11.0'">$(VCTargetsPath11)</VCTargetsPath>
+    <ProjectName>KernelProject</ProjectName>
+  </PropertyGroup>
+  <PropertyGroup Label="PropertySheets">
+    <PlatformToolset>WindowsKernelModeDriver8.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|Win32'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'" Label="Configuration">
+    <TargetVersion>Vista</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'" Label="Configuration">
+    <TargetVersion>Vista</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'" Label="Configuration">
+    <TargetVersion>Windows8</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Debug|x64'" Label="Configuration">
+    <TargetVersion>Vista</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Release|x64'" Label="Configuration">
+    <TargetVersion>Vista</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup>
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'">
+    <Link>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <AdditionalOptions>/integritycheck %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>FltMgr.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib</AdditionalDependencies>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+    </Link>
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>4748;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Inf Include="KernelProject.inf" />
+  </ItemGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+    <FilesToPackage Include="@(Inf->'%(CopyOutput)')" Condition="'@(Inf)'!=''" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\base\Common.cpp" />
+    <ClCompile Include="..\Common\base\libc.cpp" />
+    <ClCompile Include="..\Common\Kernel\MemoryMapping.cpp" />
+    <ClCompile Include="..\Common\utils\VADWalker.cpp" />
+    <ClCompile Include="src\Common.cpp" />
+    <ClCompile Include="src\DriverEntry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\base\AutoMalloc.h" />
+    <ClInclude Include="..\Common\base\Common.h" />
+    <ClInclude Include="..\Common\base\ComparableId.hpp" />
+    <ClInclude Include="..\Common\base\instrinsics.h" />
+    <ClInclude Include="..\Common\base\Shared.h" />
+    <ClInclude Include="..\Common\base\Singleton.hpp" />
+    <ClInclude Include="..\Common\Kernel\Apc.h" />
+    <ClInclude Include="..\Common\Kernel\IRQL.hpp" />
+    <ClInclude Include="..\Common\Kernel\Lock.hpp" />
+    <ClInclude Include="..\Common\Kernel\MemoryMapping.h" />
+    <ClInclude Include="..\Common\Kernel\MMU.h" />
+    <ClInclude Include="..\Common\Kernel\MMU.hpp" />
+    <ClInclude Include="..\Common\Kernel\Process.hpp" />
+    <ClInclude Include="..\Common\Kernel\Thread.hpp" />
+    <ClInclude Include="..\Common\utils\AVL.hpp" />
+    <ClInclude Include="..\Common\utils\BinTreeWalker.hpp" />
+    <ClInclude Include="..\Common\utils\ColdPatcher.hpp" />
+    <ClInclude Include="..\Common\utils\CSYSCALL.h" />
+    <ClInclude Include="..\Common\utils\CSYSCALL.hpp" />
+    <ClInclude Include="..\Common\utils\DelayLoadEntryPointHook.hpp" />
+    <ClInclude Include="..\Common\utils\DPC.hpp" />
+    <ClInclude Include="..\Common\utils\HashString.hpp" />
+    <ClInclude Include="..\Common\utils\LockedContainers.hpp" />
+    <ClInclude Include="..\Common\utils\MemoryRange.h" />
+    <ClInclude Include="..\Common\utils\PE.hpp" />
+    <ClInclude Include="..\Common\utils\ProcessCtx.h" />
+    <ClInclude Include="..\Common\utils\ProcessCtxWorker.hpp" />
+    <ClInclude Include="..\Common\utils\ProcessMonitor.hpp" />
+    <ClInclude Include="..\Common\utils\ProcessorWalker.hpp" />
+    <ClInclude Include="..\Common\utils\Queue.hpp" />
+    <ClInclude Include="..\Common\utils\Range.h" />
+    <ClInclude Include="..\Common\utils\SyscallCallbacks.hpp" />
+    <ClInclude Include="..\Common\utils\Undoc.h" />
+    <ClInclude Include="..\Common\utils\Undoc.hpp" />
+    <ClInclude Include="..\Common\utils\Vad.h" />
+    <ClInclude Include="..\Common\utils\VADWalker.h" />
+    <ClInclude Include="src\Common.h" />
+    <ClInclude Include="src\drv_common.h" />
+    <ClInclude Include="src\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\Common\amd64\_instrinsics.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Common\amd64\common.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

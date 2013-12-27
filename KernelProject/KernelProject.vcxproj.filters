@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{e00dd5af-07c3-41b0-93f9-a3e4390a19ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared">
+      <UniqueIdentifier>{63bfc2c7-1429-493a-836e-4ee125bf9bdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\amd64">
+      <UniqueIdentifier>{fa3c5a07-fae7-4d91-8636-18524182a949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Kernel">
+      <UniqueIdentifier>{8259d6a5-5840-4fe4-bb69-b52f146504cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\base">
+      <UniqueIdentifier>{d058cb63-dc8f-450a-ad64-0da6c8113874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\utils">
+      <UniqueIdentifier>{465c1292-7b3d-47f2-823f-803b5fd5d0f5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="KernelProject.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Common.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DriverEntry.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Kernel\MemoryMapping.cpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\base\Common.cpp">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\base\libc.cpp">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\utils\VADWalker.cpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Common.h">
+      <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\drv_common.h">
+      <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\Apc.h">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\IRQL.hpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\Lock.hpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\MemoryMapping.h">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\MMU.h">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\MMU.hpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\Process.hpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Kernel\Thread.hpp">
+      <Filter>Source Files\Shared\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\AutoMalloc.h">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\Common.h">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\ComparableId.hpp">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\instrinsics.h">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\Shared.h">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\Singleton.hpp">
+      <Filter>Source Files\Shared\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\AVL.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\BinTreeWalker.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\ColdPatcher.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\CSYSCALL.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\CSYSCALL.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\DelayLoadEntryPointHook.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\DPC.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\HashString.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\LockedContainers.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\MemoryRange.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\PE.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\ProcessCtx.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\ProcessCtxWorker.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\ProcessMonitor.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\ProcessorWalker.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\Queue.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\Range.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\SyscallCallbacks.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\Undoc.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\Undoc.hpp">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\Vad.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utils\VADWalker.h">
+      <Filter>Source Files\Shared\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\Common\amd64\_instrinsics.asm">
+      <Filter>Source Files\Shared\amd64</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Common\amd64\common.inc">
+      <Filter>Source Files\Shared\amd64</Filter>
+    </None>
+  </ItemGroup>
+</Project>
