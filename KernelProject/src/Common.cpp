@@ -1,10 +1,6 @@
 /**
  * @file Common.cpp
  * @author created by: Peter Hlavaty
- * @author \n
- * @author Copyright (c) 2013 ESET, spol. s r. o.
- * @note current owner: Peter Hlavaty (peter.hlavaty@eset.sk)
- * @note IMPORTANT: Before doing any significant change to this file check your plan with the current owner to avoid unexpected behaviour.
  */
 
 #include "Common.h"
