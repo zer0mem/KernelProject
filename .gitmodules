@@ -4,3 +4,6 @@
 [submodule "Common"]
 	path = Common
 	url = https://github.com/zer0mem/Common.git
+[submodule "boost"]
+	path = boost
+	url = https://github.com/boostorg/boost
