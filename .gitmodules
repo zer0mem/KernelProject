@@ -1,0 +1,6 @@
+[submodule "libc"]
+	path = libc
+	url = https://github.com/zer0mem/libc.git
+[submodule "Common"]
+	path = Common
+	url = https://github.com/zer0mem/Common.git

@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Win8.1 Debug|Win32">
+      <Configuration>Win8.1 Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Win8.1 Release|Win32">
+      <Configuration>Win8.1 Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Win8 Debug|Win32">
       <Configuration>Win8 Debug</Configuration>
       <Platform>Win32</Platform>
@@ -17,13 +25,13 @@
       <Configuration>Win7 Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Vista Debug|Win32">
-      <Configuration>Vista Debug</Configuration>
-      <Platform>Win32</Platform>
+    <ProjectConfiguration Include="Win8.1 Debug|x64">
+      <Configuration>Win8.1 Debug</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Vista Release|Win32">
-      <Configuration>Vista Release</Configuration>
-      <Platform>Win32</Platform>
+    <ProjectConfiguration Include="Win8.1 Release|x64">
+      <Configuration>Win8.1 Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Win8 Debug|x64">
       <Configuration>Win8 Debug</Configuration>
@@ -41,81 +49,100 @@
       <Configuration>Win7 Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Vista Debug|x64">
-      <Configuration>Vista Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Vista Release|x64">
-      <Configuration>Vista Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1D0B4F58-F922-4CD9-B31D-576BAC88085E}</ProjectGuid>
+    <ProjectGuid>{3A23806B-7475-41DA-B94C-02CF314C227E}</ProjectGuid>
     <TemplateGuid>{dd38f7fc-d7bd-488b-9242-7d8754cde80d}</TemplateGuid>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
-    <Configuration>Win8 Debug</Configuration>
+    <Configuration>Win8.1 Debug</Configuration>
     <Platform Condition="'$(Platform)' == ''">Win32</Platform>
-  </PropertyGroup>
-  <PropertyGroup Label="Globals">
     <RootNamespace>KernelProject</RootNamespace>
-    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VisualStudioVersion)' == '11.0'">$(VCTargetsPath11)</VCTargetsPath>
-    <ProjectName>KernelProject</ProjectName>
   </PropertyGroup>
-  <PropertyGroup Label="PropertySheets">
-    <PlatformToolset>WindowsKernelModeDriver8.0</PlatformToolset>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
     <ConfigurationType>Driver</ConfigurationType>
     <DriverType>WDM</DriverType>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|Win32'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'" Label="Configuration">
     <TargetVersion>Windows8</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'" Label="Configuration">
     <TargetVersion>Windows8</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|Win32'" Label="Configuration">
     <TargetVersion>Windows7</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|Win32'" Label="Configuration">
     <TargetVersion>Windows7</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Debug|Win32'" Label="Configuration">
-    <TargetVersion>Vista</TargetVersion>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|x64'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Release|Win32'" Label="Configuration">
-    <TargetVersion>Vista</TargetVersion>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|x64'" Label="Configuration">
     <TargetVersion>Windows8</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'" Label="Configuration">
     <TargetVersion>Windows8</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|x64'" Label="Configuration">
     <TargetVersion>Windows7</TargetVersion>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'" Label="Configuration">
     <TargetVersion>Windows7</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Debug|x64'" Label="Configuration">
-    <TargetVersion>Vista</TargetVersion>
-    <UseDebugLibraries>true</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Vista Release|x64'" Label="Configuration">
-    <TargetVersion>Vista</TargetVersion>
-    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver8.1</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>WDM</DriverType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -125,21 +152,60 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win8 Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'">
     <Link>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <EntryPointSymbol>DriverEntry</EntryPointSymbol>
-      <AdditionalOptions>/integritycheck %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>FltMgr.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib</AdditionalDependencies>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <AdditionalOptions>/INTEGRITYCHECK %(AdditionalOptions)</AdditionalOptions>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <AdditionalDependencies>$(DDK_LIB_PATH)\fltMgr.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib</AdditionalDependencies>
     </Link>
     <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common/;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories);$(SolutionDir)/boost/libs/integer/include;$(SolutionDir)/boost/libs/functional/include;$(SolutionDir)/boost/libs/detail/include;$(SolutionDir)/boost/libs/move/include;$(SolutionDir)/boost/libs/intrusive/include;$(SolutionDir)/boost/libs/static_assert/include;$(SolutionDir)/boost/libs/preprocessor/include;$(SolutionDir)/boost/libs/mpl/include;$(SolutionDir)/boost/libs/type_traits/include;$(SolutionDir)/boost/libs/exception/include;$(SolutionDir)/boost/libs/utility/include;$(SolutionDir)/boost/libs/config/include;$(SolutionDir)/boost/libs/assert/include;$(SolutionDir)/boost/libs/smart_ptr/include;$(SolutionDir)/boost/;</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>drv_common.h</PrecompiledHeaderFile>
+      <CallingConvention>FastCall</CallingConvention>
+      <AdditionalOptions />
       <TreatWarningAsError>false</TreatWarningAsError>
-      <DisableSpecificWarnings>4748;4603;4627;4986;4987;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -150,59 +216,36 @@
     <FilesToPackage Include="@(Inf->'%(CopyOutput)')" Condition="'@(Inf)'!=''" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common\base\Common.cpp" />
-    <ClCompile Include="..\Common\base\libc.cpp" />
-    <ClCompile Include="..\Common\Kernel\MemoryMapping.cpp" />
-    <ClCompile Include="..\Common\utils\VADWalker.cpp" />
-    <ClCompile Include="src\Common.cpp" />
+    <ClCompile Include="..\Common\drv_common.cpp" />
+    <ClCompile Include="..\Common\undoc\EPROCESS.cpp" />
+    <ClCompile Include="..\Common\undoc\ETHREAD.cpp" />
+    <ClCompile Include="..\Common\undoc\MMVAD_SHORT.cpp" />
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\base\AutoMalloc.h" />
-    <ClInclude Include="..\Common\base\Common.h" />
-    <ClInclude Include="..\Common\base\ComparableId.hpp" />
-    <ClInclude Include="..\Common\base\instrinsics.h" />
-    <ClInclude Include="..\Common\base\Shared.h" />
+    <ProjectReference Include="..\libc\libc.vcxproj">
+      <Project>{6b090b01-76a1-4521-902d-6011fe9aa4ed}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\auto\AutoPtr.hpp" />
+    <ClInclude Include="..\Common\base\CppDriver.h" />
     <ClInclude Include="..\Common\base\Singleton.hpp" />
-    <ClInclude Include="..\Common\Kernel\Apc.h" />
-    <ClInclude Include="..\Common\Kernel\IRQL.hpp" />
-    <ClInclude Include="..\Common\Kernel\Lock.hpp" />
-    <ClInclude Include="..\Common\Kernel\MemoryMapping.h" />
-    <ClInclude Include="..\Common\Kernel\MMU.h" />
-    <ClInclude Include="..\Common\Kernel\MMU.hpp" />
-    <ClInclude Include="..\Common\Kernel\Process.hpp" />
-    <ClInclude Include="..\Common\Kernel\Thread.hpp" />
-    <ClInclude Include="..\Common\utils\AVL.hpp" />
-    <ClInclude Include="..\Common\utils\BinTreeWalker.hpp" />
-    <ClInclude Include="..\Common\utils\ColdPatcher.hpp" />
-    <ClInclude Include="..\Common\utils\CSYSCALL.h" />
-    <ClInclude Include="..\Common\utils\CSYSCALL.hpp" />
-    <ClInclude Include="..\Common\utils\DelayLoadEntryPointHook.hpp" />
-    <ClInclude Include="..\Common\utils\DPC.hpp" />
-    <ClInclude Include="..\Common\utils\HashString.hpp" />
-    <ClInclude Include="..\Common\utils\LockedContainers.hpp" />
-    <ClInclude Include="..\Common\utils\MemoryRange.h" />
-    <ClInclude Include="..\Common\utils\PE.hpp" />
-    <ClInclude Include="..\Common\utils\ProcessCtx.h" />
-    <ClInclude Include="..\Common\utils\ProcessCtxWorker.hpp" />
-    <ClInclude Include="..\Common\utils\ProcessMonitor.hpp" />
-    <ClInclude Include="..\Common\utils\ProcessorWalker.hpp" />
-    <ClInclude Include="..\Common\utils\Queue.hpp" />
+    <ClInclude Include="..\Common\drv_common.h" />
+    <ClInclude Include="..\Common\internals\Vad.h" />
+    <ClInclude Include="..\Common\kernel\IRQL.hpp" />
+    <ClInclude Include="..\Common\kernel\Lock.hpp" />
+    <ClInclude Include="..\Common\undoc\EPROCESS.h" />
+    <ClInclude Include="..\Common\undoc\ETHREAD.h" />
+    <ClInclude Include="..\Common\undoc\MMVAD_SHORT.h" />
+    <ClInclude Include="..\Common\undoc\Undoc.hpp" />
+    <ClInclude Include="..\Common\undoc\UndocHolder.h" />
+    <ClInclude Include="..\Common\utils\DummeVad.hpp" />
+    <ClInclude Include="..\Common\utils\MMVAD_SHORT.hpp" />
     <ClInclude Include="..\Common\utils\Range.h" />
-    <ClInclude Include="..\Common\utils\SyscallCallbacks.hpp" />
-    <ClInclude Include="..\Common\utils\Undoc.h" />
-    <ClInclude Include="..\Common\utils\Undoc.hpp" />
-    <ClInclude Include="..\Common\utils\Vad.h" />
-    <ClInclude Include="..\Common\utils\VADWalker.h" />
-    <ClInclude Include="src\Common.h" />
-    <ClInclude Include="src\drv_common.h" />
-    <ClInclude Include="src\stdafx.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <MASM Include="..\Common\amd64\_instrinsics.asm" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\Common\amd64\common.inc" />
+    <ClInclude Include="..\Common\utils\VadLock.h" />
+    <ClInclude Include="..\Common\utils\VadNode.h" />
+    <ClInclude Include="..\Common\utils\VadScanner.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
