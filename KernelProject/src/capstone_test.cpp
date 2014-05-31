@@ -137,6 +137,7 @@ void test()
 //#define X86_CODE32 "\xf3\xaa"		// rep stosb
 
 	struct platform platforms[] = {
+		/*
 		{
 			CS_ARCH_X86,
 			CS_MODE_16,
@@ -166,7 +167,7 @@ void test()
 			(unsigned char *)X86_CODE64,
 			sizeof(X86_CODE64) - 1,
 			"X86 64 (Intel syntax)"
-		},
+		},*/
 		{
 			CS_ARCH_X86,
 			CS_MODE_64,
