@@ -187,6 +187,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>C:\Users\zer0mem\share</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Release|x64'">
     <Link>
@@ -208,6 +209,25 @@
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win8.1 Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)/Common/;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>drv_common.h</PrecompiledHeaderFile>
+      <CallingConvention>FastCall</CallingConvention>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <AdditionalDependencies>test_x86.lib;libcapstone.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <Inf Include="KernelProject.inf" />
   </ItemGroup>
@@ -217,12 +237,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\drv_common.cpp" />
-    <ClCompile Include="..\Common\undoc\EPROCESS.cpp" />
-    <ClCompile Include="..\Common\undoc\ETHREAD.cpp" />
-    <ClCompile Include="..\Common\undoc\MMVAD_SHORT.cpp" />
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\capstone\msvc\capstone_static\capstone_static.vcxproj">
+      <Project>{5b01d900-2359-44ca-9914-6b0c6afb7be7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\capstone\msvc\test_x86\test_x86.vcxproj">
+      <Project>{9c69243e-c7dc-42a4-ab86-0696e51697c8}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\libc\libc.vcxproj">
       <Project>{6b090b01-76a1-4521-902d-6011fe9aa4ed}</Project>
     </ProjectReference>

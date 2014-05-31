@@ -7,3 +7,6 @@
 [submodule "boost"]
 	path = boost
 	url = https://github.com/boostorg/boost
+[submodule "capstone"]
+	path = capstone
+	url = https://github.com/aquynh/capstone.git
