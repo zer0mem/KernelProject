@@ -219,12 +219,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common;);$(SolutionDir)/capstone/include;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
-      <AdditionalDependencies>test_x86.lib;libcapstone.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib;</AdditionalDependencies>
+      <AdditionalDependencies>libcapstone.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -237,38 +237,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\drv_common.cpp" />
+    <ClCompile Include="src\capstone_test.cpp" />
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capstone\msvc\capstone_static\capstone_static.vcxproj">
       <Project>{5b01d900-2359-44ca-9914-6b0c6afb7be7}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\capstone\msvc\test_x86\test_x86.vcxproj">
-      <Project>{9c69243e-c7dc-42a4-ab86-0696e51697c8}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\libc\libc.vcxproj">
       <Project>{6b090b01-76a1-4521-902d-6011fe9aa4ed}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\auto\AutoPtr.hpp" />
-    <ClInclude Include="..\Common\base\CppDriver.h" />
     <ClInclude Include="..\Common\base\Singleton.hpp" />
     <ClInclude Include="..\Common\drv_common.h" />
-    <ClInclude Include="..\Common\internals\Vad.h" />
-    <ClInclude Include="..\Common\kernel\IRQL.hpp" />
-    <ClInclude Include="..\Common\kernel\Lock.hpp" />
-    <ClInclude Include="..\Common\undoc\EPROCESS.h" />
-    <ClInclude Include="..\Common\undoc\ETHREAD.h" />
-    <ClInclude Include="..\Common\undoc\MMVAD_SHORT.h" />
-    <ClInclude Include="..\Common\undoc\Undoc.hpp" />
-    <ClInclude Include="..\Common\undoc\UndocHolder.h" />
-    <ClInclude Include="..\Common\utils\DummeVad.hpp" />
-    <ClInclude Include="..\Common\utils\MMVAD_SHORT.hpp" />
-    <ClInclude Include="..\Common\utils\Range.h" />
-    <ClInclude Include="..\Common\utils\VadLock.h" />
-    <ClInclude Include="..\Common\utils\VadNode.h" />
-    <ClInclude Include="..\Common\utils\VadScanner.hpp" />
+    <ClInclude Include="..\Common\kernel\CppDriver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

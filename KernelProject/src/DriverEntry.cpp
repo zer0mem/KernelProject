@@ -19,9 +19,7 @@ CCppDriver::~CCppDriver()
 //------   INSTALL   --------
 //---------------------------
 
-EXTERN_C
-void 
-test();
+void test();
 
 __checkReturn
 NTSTATUS 
