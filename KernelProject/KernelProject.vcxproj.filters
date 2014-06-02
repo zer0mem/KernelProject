@@ -17,6 +17,21 @@
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
+    <Filter Include="Source Files\amd64">
+      <UniqueIdentifier>{8df3d21b-d363-48ef-b9d9-d18edfc013dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{6045314b-108b-427c-95a0-6fd5d8094a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\base">
+      <UniqueIdentifier>{cf8bf513-bafa-4778-a028-b586d521ca6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\kernel">
+      <UniqueIdentifier>{6875eb26-9c27-40dd-931a-913a2d4d9c6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\3rdparty">
+      <UniqueIdentifier>{3ca0249e-e6ed-4f14-8266-38f179e9f0d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="KernelProject.inf">
@@ -24,67 +39,33 @@
     </Inf>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Common\drv_common.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\DriverEntry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\drv_common.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\auto\AutoPtr.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\base\CppDriver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Common\base\Singleton.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\kernel\CppDriver.h">
+      <Filter>Common\kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\Common\drv_common.h">
-      <Filter>Header Files</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\internals\Vad.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\Common\3rdparty\Disasm.hpp">
+      <Filter>Common\3rdparty</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\kernel\IRQL.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\Common\3rdparty\InsInfo.hpp">
+      <Filter>Common\3rdparty</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\kernel\Lock.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\undoc\EPROCESS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\undoc\ETHREAD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\undoc\MMVAD_SHORT.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\undoc\Undoc.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\undoc\UndocHolder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\DummeVad.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\MMVAD_SHORT.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\Range.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\VadLock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\VadNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Common\utils\VadScanner.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\amd64\capstone_test.asm">
+      <Filter>Source Files\amd64</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

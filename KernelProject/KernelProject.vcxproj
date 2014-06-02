@@ -224,8 +224,8 @@
     </ClCompile>
     <Link>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
-      <AdditionalDependencies>libcapstone.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib);$(DDK_LIB_PATH)\ntoskrnl.lib;$(DDK_LIB_PATH)\hal.lib;$(DDK_LIB_PATH)\wmilib.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcapstone.lib;ntoskrnl.lib;hal.lib;wmilib.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\Release;$(DDK_LIB_PATH)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -237,21 +237,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\drv_common.cpp" />
-    <ClCompile Include="src\capstone_test.cpp" />
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capstone\msvc\capstone_static\capstone_static.vcxproj">
       <Project>{5b01d900-2359-44ca-9914-6b0c6afb7be7}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\capstone\msvc\test_x86\test_x86.vcxproj">
+      <Project>{9c69243e-c7dc-42a4-ab86-0696e51697c8}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\libc\libc.vcxproj">
       <Project>{6b090b01-76a1-4521-902d-6011fe9aa4ed}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\3rdparty\Disasm.hpp" />
+    <ClInclude Include="..\Common\3rdparty\InsInfo.hpp" />
     <ClInclude Include="..\Common\base\Singleton.hpp" />
     <ClInclude Include="..\Common\drv_common.h" />
     <ClInclude Include="..\Common\kernel\CppDriver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\amd64\capstone_test.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">false</ExcludedFromBuild>
+    </MASM>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
