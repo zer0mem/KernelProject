@@ -252,24 +252,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\cccapstone\cppbindings\Arm.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\Arm64.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\ArmDisasm.h" />
     <ClInclude Include="..\cccapstone\cppbindings\CsOpcodeInfoWrap.hpp" />
     <ClInclude Include="..\cccapstone\cppbindings\Disasm.hpp" />
     <ClInclude Include="..\cccapstone\cppbindings\InsInfo.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\Mips.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\MipsDisasm.h" />
-    <ClInclude Include="..\cccapstone\cppbindings\PPC.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\PPCDisasm.h" />
-    <ClInclude Include="..\cccapstone\cppbindings\Sparc.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\SparcDisasm.h" />
-    <ClInclude Include="..\cccapstone\cppbindings\SystemZ.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\SystemZDisasm.h" />
     <ClInclude Include="..\cccapstone\cppbindings\X86.hpp" />
     <ClInclude Include="..\cccapstone\cppbindings\X86Disasm.h" />
-    <ClInclude Include="..\cccapstone\cppbindings\XCore.hpp" />
-    <ClInclude Include="..\cccapstone\cppbindings\XCoreDisasm.h" />
     <ClInclude Include="..\Common\base\Singleton.hpp" />
     <ClInclude Include="..\Common\drv_common.h" />
     <ClInclude Include="..\Common\kernel\CppDriver.h" />
