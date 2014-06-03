@@ -26,6 +26,8 @@ namespace CapstoneBindingsTest
 		__in size_t size
 		)
 	{
+		dis.SetSyntax(cs_opt_value::CS_OPT_SYNTAX_INTEL);
+
 		auto insn = dis.Disasm(code, size);
 		if (!insn.get())
 			return;
