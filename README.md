@@ -1,7 +1,7 @@
 KernelProject
 =============
 
-Plain project for usege with github/zer0mem/common.git
+c++ kernel project in vs12, demo of capstone usage
 
 
 **1. clone all (automatically)**
