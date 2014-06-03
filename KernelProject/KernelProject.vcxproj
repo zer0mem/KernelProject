@@ -219,7 +219,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win7 Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common;);$(SolutionDir)/capstone/include;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/Common;$(SolutionDir)/cccapstone/capstone/include;$(IntDir);$(VCInstallDir)/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
       <AdditionalOptions>/INTEGRITYCHECK %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -241,10 +241,10 @@
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\capstone\msvc\capstone_static\capstone_static.vcxproj">
+    <ProjectReference Include="..\cccapstone\capstone\msvc\capstone_static\capstone_static.vcxproj">
       <Project>{5b01d900-2359-44ca-9914-6b0c6afb7be7}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\capstone\msvc\test_x86\test_x86.vcxproj">
+    <ProjectReference Include="..\cccapstone\capstone\msvc\test_x86\test_x86.vcxproj">
       <Project>{9c69243e-c7dc-42a4-ab86-0696e51697c8}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libc\libc.vcxproj">
@@ -252,11 +252,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Common\3rdparty\Disasm.hpp" />
-    <ClInclude Include="..\Common\3rdparty\InsInfo.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\CsAdvOptionsWrap.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\CsCapstoneWrap.h" />
+    <ClInclude Include="..\cccapstone\cppbindings\CsOpcodeInfoWrap.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\Disasm.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\InsInfo.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\X86.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\X86Disasm.h" />
     <ClInclude Include="..\Common\base\Singleton.hpp" />
     <ClInclude Include="..\Common\drv_common.h" />
     <ClInclude Include="..\Common\kernel\CppDriver.h" />
+    <ClInclude Include="src\CapstoneCppBindingsTest.hpp" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\amd64\capstone_test.asm">
