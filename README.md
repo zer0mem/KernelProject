@@ -1,7 +1,7 @@
 KernelProject
 =============
 
-c++ kernel project in vs12, demo of capstone usage
+c++ kernel project in vs12, demo for capstone usage
 
 
 **1. clone all (automatically)**
@@ -9,25 +9,11 @@ c++ kernel project in vs12, demo of capstone usage
     git clone --recursive https://github.com/zer0mem/KernelProject.git
 
 
-**2. manual clone**
-
-    git clone https://github.com/zer0mem/KernelProject.git
-    cd ./KernelProject/libc/
-    git clone https://github.com/zer0mem/libc.git .
-    cd ../capstone/
-    git clone -b next https://github.com/aquynh/capstone.git .
-
-if you also want to test *boost*, do:
-
-    cd ../boost
-    git clone --recursive https://github.com/boostorg/boost
-
-
 **3. build Capstone library**
 
 - rebuild capstone_static
 
-- rebuild test_x86
+- rebuild test_x86 (as .lib)
 
 
 **4. build**
@@ -35,6 +21,3 @@ if you also want to test *boost*, do:
 - architecture for build : Win7 Release -> x64;
 - rebuild solution
 
-  KernelProject -> Projects -> Configuration Properties -> Driver Signing -> General :
-  ---> Sign Mode : "Test Sign"
-  ---> Test Certificate : "<Create Test Certificate ...>"
