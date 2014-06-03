@@ -4,14 +4,11 @@
 */
 
 #include "drv_common.h"
-#include <memory>
-
 
 EXTERN_C
 int main();
 
 #include "CapstoneCppBindingsTest.hpp"
-
 
 //---------------------------
 //-----   UNINSTALL   -------
@@ -40,7 +37,8 @@ CCppDriver::Main(
 
 	CapstoneBindingsTest::X64Disasm(main, 0x50);
 	CapstoneBindingsTest::X64DisasmCallback(main, 0x50);
-	CapstoneBindingsTest::X64DisasmCallback(RANDOM_CODE, 0x50);
+	CapstoneBindingsTest::X64DisasmCallback(main, 0x50, true);
+	CapstoneBindingsTest::X64DisasmCallback(RANDOM_CODE, sizeof(RANDOM_CODE) - 1);
 
 	return STATUS_SUCCESS;
 }

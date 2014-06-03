@@ -252,6 +252,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\cccapstone\cppbindings\CsAdvOptionsWrap.hpp" />
+    <ClInclude Include="..\cccapstone\cppbindings\CsCapstoneWrap.h" />
     <ClInclude Include="..\cccapstone\cppbindings\CsOpcodeInfoWrap.hpp" />
     <ClInclude Include="..\cccapstone\cppbindings\Disasm.hpp" />
     <ClInclude Include="..\cccapstone\cppbindings\InsInfo.hpp" />

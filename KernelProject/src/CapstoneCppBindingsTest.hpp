@@ -27,7 +27,6 @@ namespace CapstoneBindingsTest
 		)
 	{
 		auto insn = dis.Disasm(code, size);
-
 		if (!insn.get())
 			return;
 
@@ -38,26 +37,28 @@ namespace CapstoneBindingsTest
 			dis.PrintInstDetail(insn->Instructions[i]);
 
 			//TODO
-#if 0
+	#if 0
 			if (!dis.IsInInsGroup(insn->Instructions[i], x86_insn_group::X86_GRP_JUMP))
 				continue;
 
 			printf("\nCONTROL FLOW CHANGE instruction detected!\n");
 			printf("-> 0x%p:\t%s\t%s\n", insn->Instructions[i].address, insn->Instructions[i].mnemonic, insn->Instructions[i].op_str);
-#endif
+	#endif
 		}
 	}
 
 	static
-	void 
+	void
 	X64Disasm(
 		__in const void* code,
-		__in size_t size
+		__in size_t size,
+		__in bool allInfo = false
 		)
 	{
 		CX86Disasm64 dis;
 		if (dis.GetError())
 			return;
+
 		DisasmData(dis, code, size);
 	}
 
@@ -65,19 +66,18 @@ namespace CapstoneBindingsTest
 	void 
 	X64DisasmCallback(
 		__in const void* code,
-		__in size_t size
+		__in size_t size,
+		__in bool allInfo = false
 		)
 	{
-		CX86Disasm64 dis(
-			cs_mode::CS_MODE_64 + cs_mode::CS_MODE_LITTLE_ENDIAN,
-			cs_opt_type::CS_OPT_DETAIL,
-			cs_opt_value::CS_OPT_ON,
-			"skip callbacks setup for intel x64",
-			cs_opt_type::CS_OPT_SKIPDATA_SETUP,
-			cs_opt_skipdata { ".db", SkipDataCallback, CCppDriver::GetInstance().DriverObject() });
-
+		CX86Disasm64 dis;
 		if (dis.GetError())
 			return;
+
+		if (allInfo)
+			dis.SetDetail(cs_opt_value::CS_OPT_ON);
+
+		dis.SetSkipDataCallback(cs_opt_skipdata{ ".UNKOWNBYTES : ", SkipDataCallback, nullptr });
 		DisasmData(dis, code, size);
 	}
 };
