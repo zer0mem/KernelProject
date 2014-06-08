@@ -225,7 +225,7 @@
     </ClCompile>
     <Link>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
-      <AdditionalDependencies>$(SolutionDir)\x64\Release\libcapstone.lib;libcntpr.lib;ntoskrnl.lib;hal.lib;wmilib.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)x64\Release\capstone.lib;libcntpr.lib;ntoskrnl.lib;hal.lib;wmilib.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Release\;$(DDK_LIB_PATH)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
