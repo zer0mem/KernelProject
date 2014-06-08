@@ -225,8 +225,8 @@
     </ClCompile>
     <Link>
       <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
-      <AdditionalDependencies>libcapstone.lib;ntoskrnl.lib;hal.lib;wmilib.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\Release;$(DDK_LIB_PATH)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)\x64\Release\libcapstone.lib;libcntpr.lib;ntoskrnl.lib;hal.lib;wmilib.lib;%(AdditionalDependencies);$(KernelBufferOverflowLib)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Release\;$(DDK_LIB_PATH)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -238,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\drv_common.cpp" />
+    <ClCompile Include="..\Common\kernel\libc.cpp" />
     <ClCompile Include="src\DriverEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
