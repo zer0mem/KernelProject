@@ -21,7 +21,7 @@ namespace CapstoneBindingsTest
 	static
 	void 
 	DisasmData(
-		__in CX86Arch& dis,
+		__in CCsDisasm<CX86InsClass>& dis,
 		__in const void* code,
 		__in size_t size
 		)
@@ -35,16 +35,15 @@ namespace CapstoneBindingsTest
 		printf("\n\nDISASM :\n\n");
 		for (size_t i = 0; i < insn->Count; i++)
 		{
-			printf("-> 0x%p:\t%s\t%s\n", insn->Instructions[i].address, insn->Instructions[i].mnemonic, insn->Instructions[i].op_str);
-			dis.PrintInstDetail(insn->Instructions[i]);
+			printf("-> 0x%p:\t%s\t%s\n", insn->Instructions(i)->address, insn->Instructions(i)->mnemonic, insn->Instructions(i)->op_str);
 
 			//TODO
 	#if 0
-			if (!dis.IsInInsGroup(insn->Instructions[i], x86_insn_group::X86_GRP_JUMP))
+			if (!insn->Instructions(i).IsInInsGroup(x86_insn_group::X86_GRP_JUMP))
 				continue;
 
 			printf("\nCONTROL FLOW CHANGE instruction detected!\n");
-			printf("-> 0x%p:\t%s\t%s\n", insn->Instructions[i].address, insn->Instructions[i].mnemonic, insn->Instructions[i].op_str);
+			printf("-> 0x%p:\t%s\t%s\n", insn->Instructions(i)->address, insn->Instructions(i)->mnemonic, insn->Instructions(i)->op_str);
 	#endif
 		}
 	}

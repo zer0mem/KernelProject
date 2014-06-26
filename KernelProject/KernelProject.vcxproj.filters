@@ -5,32 +5,24 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Driver Files">
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
-    <Filter Include="Source Files\amd64">
-      <UniqueIdentifier>{8df3d21b-d363-48ef-b9d9-d18edfc013dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common">
-      <UniqueIdentifier>{6045314b-108b-427c-95a0-6fd5d8094a05}</UniqueIdentifier>
+      <UniqueIdentifier>{9d798069-d995-44b5-8316-a0af7e3a2df8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\base">
-      <UniqueIdentifier>{cf8bf513-bafa-4778-a028-b586d521ca6c}</UniqueIdentifier>
+      <UniqueIdentifier>{c50e1ee6-e756-4886-a785-82d6034aceb4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Common\kernel">
-      <UniqueIdentifier>{6875eb26-9c27-40dd-931a-913a2d4d9c6a}</UniqueIdentifier>
+      <UniqueIdentifier>{6bc15a58-bf69-48ab-9269-086736309d9c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common\3rdparty">
-      <UniqueIdentifier>{3ca0249e-e6ed-4f14-8266-38f179e9f0d6}</UniqueIdentifier>
+    <Filter Include="cccapstone">
+      <UniqueIdentifier>{2c5f2df3-6a2a-4f7f-b11a-2cbc20a94fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cccapstone\cppbindings">
+      <UniqueIdentifier>{0ee51e82-8ce4-42da-9525-4f06de9f4364}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,30 +34,43 @@
     <ClCompile Include="src\DriverEntry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\drv_common.cpp">
-      <Filter>Common</Filter>
+    <ClCompile Include="..\Common\kernel\libc.cpp">
+      <Filter>Common\kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Common\kernel\KernelModule.hpp">
+      <Filter>Common\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\Module.hpp">
+      <Filter>Common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\base\ObjDisposer.hpp">
+      <Filter>Common\base</Filter>
+    </ClInclude>
     <ClInclude Include="..\Common\base\Singleton.hpp">
       <Filter>Common\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\kernel\CppDriver.h">
-      <Filter>Common\kernel</Filter>
+    <ClInclude Include="..\Common\base\DynamicClass.h">
+      <Filter>Common\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\drv_common.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="..\cccapstone\cppbindings\CsCapstoneHelper.h">
+      <Filter>cccapstone\cppbindings</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\3rdparty\Disasm.hpp">
-      <Filter>Common\3rdparty</Filter>
+    <ClInclude Include="..\cccapstone\cppbindings\CsIns.hpp">
+      <Filter>cccapstone\cppbindings</Filter>
     </ClInclude>
-    <ClInclude Include="..\Common\3rdparty\InsInfo.hpp">
-      <Filter>Common\3rdparty</Filter>
+    <ClInclude Include="..\cccapstone\cppbindings\Disasm.hpp">
+      <Filter>cccapstone\cppbindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cccapstone\cppbindings\X86Disasm.h">
+      <Filter>cccapstone\cppbindings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CapstoneCppBindingsTest.hpp">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="src\amd64\capstone_test.asm">
-      <Filter>Source Files\amd64</Filter>
-    </MASM>
+    <None Include="..\libc\libc.vcxproj.filters" />
   </ItemGroup>
 </Project>

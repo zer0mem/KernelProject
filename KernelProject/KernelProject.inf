@@ -1,5 +1,5 @@
 ;
-; KernelProject.inf
+; k33nProject.inf
 ;
 
 [Version]
@@ -8,7 +8,7 @@ Class=
 ClassGuid=
 Provider=
 DriverVer=
-CatalogFile=
+CatalogFile=diskfilter.cat
 
 [DestinationDirs]
 DefaultDestDir = 12

@@ -4,3 +4,45 @@
 [submodule "cccapstone"]
 	path = cccapstone
 	url = https://github.com/zer0mem/cccapstone.git
+[submodule "boost/libs/integer"]
+	path = boost/libs/integer
+	url = https://github.com/boostorg/integer.git
+[submodule "boost/libs/functional"]
+	path = boost/libs/functional
+	url = https://github.com/boostorg/functional.git
+[submodule "boost/libs/detail"]
+	path = boost/libs/detail
+	url = https://github.com/boostorg/detail.git
+[submodule "boost/libs/move"]
+	path = boost/libs/move
+	url = https://github.com/boostorg/move.git
+[submodule "boost/libs/intrusive"]
+	path = boost/libs/intrusive
+	url = https://github.com/boostorg/intrusive.git
+[submodule "boost/libs/static_assert"]
+	path = boost/libs/static_assert
+	url = https://github.com/boostorg/static_assert.git
+[submodule "boost/libs/preprocessor"]
+	path = boost/libs/preprocessor
+	url = https://github.com/boostorg/preprocessor.git
+[submodule "boost/libs/mpl"]
+	path = boost/libs/mpl
+	url = https://github.com/boostorg/mpl.git
+[submodule "boost/libs/type_traits"]
+	path = boost/libs/type_traits
+	url = https://github.com/boostorg/type_traits.git
+[submodule "boost/libs/exception"]
+	path = boost/libs/exception
+	url = https://github.com/boostorg/exception.git
+[submodule "boost/libs/utility"]
+	path = boost/libs/utility
+	url = https://github.com/boostorg/utility.git
+[submodule "boost/libs/config"]
+	path = boost/libs/config
+	url = https://github.com/boostorg/config.git
+[submodule "boost/libs/assert"]
+	path = boost/libs/assert
+	url = https://github.com/boostorg/assert.git
+[submodule "boost/libs/smart_ptr"]
+	path = boost/libs/smart_ptr
+	url = https://github.com/boostorg/smart_ptr.git

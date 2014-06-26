@@ -1,47 +1,41 @@
-#include <libc/src/libc.h>
+#include <ntifs.h>
 #include <libc/src/cpp.h>
-#include <libc/src/pool.h>
 
-#include "CppDriver.h"
-
-void 
-set_kernel_libc()
-{
-	cc_alloc = PoolAlloc;
-	cc_free = PoolFree;
-	cc_realloc = PoolReAlloc;
-}
-
-CCppDriver CCppDriver::m_instance;
-DRIVER_OBJECT* CCppDriver::g_pDriverObject = nullptr;
-
-//---------------------------
-//-----   UNINSTALL   -------
-//---------------------------
-void
-OnUnload(
-	__in DRIVER_OBJECT* driverObject
-	)
-{
-	UNREFERENCED_PARAMETER(driverObject);
-	cc_doexit(0, 0, 0);//call dtors including CCppDiver one!
-}
+#include <Common/kernel/KernelModule.hpp>
 
 //---------------------------
 //------   INSTALL   --------
 //---------------------------
-EXTERN_C
-__declspec(dllexport)
-NTSTATUS
-DriverEntry(
-	__in DRIVER_OBJECT* driverObject,
-	__in UNICODE_STRING* registryPath
+
+extern
+__checkReturn
+bool
+drv_main();
+
+void
+NTAPI
+ExitKernelEntry(
+	__in DRIVER_OBJECT*
 	)
 {
-	set_kernel_libc();
-	cc_init(0);//call ctors
+	cc_doexit(0, 0, 0);//call dtors
+}
 
-	driverObject->DriverUnload = OnUnload;
-	CCppDriver::GetInstance().DriverObject() = driverObject;
-	return CCppDriver::GetInstance().Main(driverObject, registryPath);
+extern "C"
+__declspec(dllexport)
+NTSTATUS
+NTAPI
+DriverEntry(
+	__in DRIVER_OBJECT* driverObject,
+	__in void* param
+	)
+{
+	driverObject->DriverUnload = reinterpret_cast<DRIVER_UNLOAD*>(ExitKernelEntry);
+
+	CKernelModule::GetInstance().SetParams(driverObject, param);
+
+	if (drv_main())
+		return STATUS_SUCCESS;
+
+	return STATUS_UNSUCCESSFUL;
 }

@@ -12,8 +12,6 @@
 #include <ntifs.h>
 #include <wdm.h>
 
-#include <Common/kernel/CppDriver.h>
-
 #include <utility>
 using CID = std::pair<HANDLE, HANDLE>;//pid, tid
 
