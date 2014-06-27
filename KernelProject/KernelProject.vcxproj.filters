@@ -54,20 +54,20 @@
     <ClInclude Include="..\Common\base\DynamicClass.h">
       <Filter>Common\base</Filter>
     </ClInclude>
-    <ClInclude Include="..\cccapstone\cppbindings\CsCapstoneHelper.h">
-      <Filter>cccapstone\cppbindings</Filter>
-    </ClInclude>
     <ClInclude Include="..\cccapstone\cppbindings\CsIns.hpp">
       <Filter>cccapstone\cppbindings</Filter>
     </ClInclude>
     <ClInclude Include="..\cccapstone\cppbindings\Disasm.hpp">
       <Filter>cccapstone\cppbindings</Filter>
     </ClInclude>
-    <ClInclude Include="..\cccapstone\cppbindings\X86Disasm.h">
-      <Filter>cccapstone\cppbindings</Filter>
-    </ClInclude>
     <ClInclude Include="src\CapstoneCppBindingsTest.hpp">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cccapstone\cppbindings\CsCapstoneHelper.hh">
+      <Filter>cccapstone\cppbindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cccapstone\cppbindings\X86Disasm.hh">
+      <Filter>cccapstone\cppbindings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

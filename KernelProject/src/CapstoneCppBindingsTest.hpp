@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cccapstone/cppbindings/X86Disasm.h>
+#include <cccapstone/cppbindings/X86Disasm.hh>
 
 namespace CapstoneBindingsTest
 {
