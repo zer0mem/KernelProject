@@ -30,6 +30,7 @@ DriverEntry(
 	__in void* param
 	)
 {
+	cc_init(0);
 	driverObject->DriverUnload = reinterpret_cast<DRIVER_UNLOAD*>(ExitKernelEntry);
 
 	CKernelModule::GetInstance().SetParams(driverObject, param);
