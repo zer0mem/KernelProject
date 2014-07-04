@@ -8,8 +8,8 @@ c++ kernel project in vs12, demo for capstone usage
 
     git clone --recursive https://github.com/zer0mem/KernelProject.git
     
-    //but seems cloning separetely boost did not work as i want to, so use 
-    --> git clone https://github.com/boostorg/boost --recursive
+    //missing enable_if.hpp + ..
+    --> copy ./libs to ./capstone
 
 **3. build Capstone library**
 
