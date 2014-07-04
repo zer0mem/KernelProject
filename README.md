@@ -1,7 +1,7 @@
-KernelProject
+KernelProject (for demo, use "capstone" branch !)
 =============
 
-c++ kernel project in vs12, demo for capstone usage, available to use also boost!
+c++ kernel project in vs12, available to use also boost & std!
 
 
 **1. clone all (automatically)**
