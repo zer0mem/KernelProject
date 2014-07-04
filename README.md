@@ -1,5 +1,7 @@
-KernelProject (for demo, use "capstone" branch !)
+KernelProject
 =============
+("capstone" branch for demonstaration of capstone usage in kernel!)
+
 
 c++ kernel project in vs12, available to use also boost & std!
 
