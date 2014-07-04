@@ -46,3 +46,9 @@
 [submodule "boost/libs/smart_ptr"]
 	path = boost/libs/smart_ptr
 	url = https://github.com/boostorg/smart_ptr.git
+[submodule "boost/libs/tti"]
+	path = boost/libs/tti
+	url = https://github.com/boostorg/tti.git
+[submodule "boost/libs/function_types"]
+	path = boost/libs/function_types
+	url = https://github.com/boostorg/function_types.git
